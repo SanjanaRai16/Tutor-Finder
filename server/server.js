@@ -53,7 +53,7 @@ const app = express()
 // }))
 
 app.use(cors({
-  origin: "tutor-finder-ruddy.vercel.app",
+  origin: "https://tutor-finder-ruddy.vercel.app",
   credentials: true
 }))
 
