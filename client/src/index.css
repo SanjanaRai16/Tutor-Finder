@@ -1,0 +1,205 @@
+/* ================= ROOT ================= */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+
+  /* 🌈 NEW GRADIENT SYSTEM */
+  --accent: #6c63ff;
+  --accent2: #00c6ff;
+  --accent3: #ff3d77;
+
+  --gradient: linear-gradient(90deg, #6c63ff, #00c6ff);
+  --gradient-soft: linear-gradient(135deg, #f5f7ff, #eef1ff);
+
+  --accent-bg: rgba(108, 99, 255, 0.1);
+  --accent-border: rgba(108, 99, 255, 0.4);
+
+  --shadow:
+    rgba(0, 0, 0, 0.08) 0 10px 25px,
+    rgba(0, 0, 0, 0.04) 0 4px 10px;
+
+  --glass: rgba(255, 255, 255, 0.75);
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--gradient-soft);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================= DARK MODE ================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+
+    --gradient-soft: linear-gradient(135deg, #1a1c25, #111217);
+    --glass: rgba(30, 30, 50, 0.6);
+
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 25px,
+      rgba(0, 0, 0, 0.25) 0 4px 10px;
+  }
+}
+
+/* ================= BASE ================= */
+body {
+  margin: 0;
+  background: var(--gradient-soft);
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  border-inline: 1px solid var(--border);
+}
+
+/* ================= HEADINGS ================= */
+h1, h2 {
+  font-family: var(--heading);
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  margin: 32px 0;
+
+  /* 🔥 Gradient Heading */
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* Primary Gradient Button */
+.btn-primary {
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent-bg);
+}
+
+/* ================= INPUT ================= */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+/* ================= ALERT ================= */
+.alert {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.alert-error {
+  background: #ffecec;
+  color: #d63031;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ddd, transparent);
+  margin: 24px 0;
+}
+
+/* ================= ANIMATION ================= */
+.fade-up {
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
