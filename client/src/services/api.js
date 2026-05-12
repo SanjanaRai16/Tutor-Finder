@@ -31,9 +31,10 @@
 
 // export default api
 import axios from 'axios'
+
 const api = axios.create({
-  baseURL: 'https://tutor-finder-abnq.onrender.com/api',
-  withCredentials: true   // ✅ REQUIRED FOR COOKIES
+  baseURL: import.meta.env.VITE_API_URL,
+  withCredentials: true
 })
 
 // api.interceptors.request.use(config => {
