@@ -54,7 +54,9 @@ app.use(cors({
 
 app.use(express.json())
 app.use(cookieParser())   // ✅ ADD THIS (VERY IMPORTANT)
-
+app.get("/", (req, res) => {
+  res.send("Tutor Finder API Running");
+});
 app.use('/api/auth',     authRoutes)
 app.use('/api/tutors',   tutorRoutes)
 app.use('/api/bookings', bookingRoutes)
