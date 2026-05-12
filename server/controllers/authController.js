@@ -126,8 +126,10 @@ export const register = async (req, res) => {
     const token = genToken(user)
     res.cookie('token', token, {
       httpOnly: true,
-      secure: false,
-      sameSite: 'lax',
+      // secure: false, 
+      secure: true,   // ✅ SET TO TRUE IN PRODUCTION
+      sameSite: 'none', // ✅ SET TO 'none' FOR CROSS-SITE
+      // sameSite: 'lax',
       maxAge: 7 * 24 * 60 * 60 * 1000
     })
 
@@ -162,8 +164,8 @@ export const login = async (req, res) => {
     // 🍪 SET COOKIE
     res.cookie('token', token, {
       httpOnly: true,
-      secure: false,
-      sameSite: 'lax',
+      secure: true,
+      sameSite: 'none',
       maxAge: 7 * 24 * 60 * 60 * 1000
     })
 
