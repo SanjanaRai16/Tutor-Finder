@@ -48,7 +48,7 @@ connectDB()
 const app = express()
 
 app.use(cors({ 
-  origin: ['http://localhost:5173', 'https://tutor-finder-ruddy.vercel.app'],
+  origin: 'http://localhost:5173', //'https://tutor-finder-ruddy.vercel.app'],
   credentials: true   // ✅ REQUIRED for cookies
 }))
 
