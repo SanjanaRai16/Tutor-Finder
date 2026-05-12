@@ -173,6 +173,7 @@ export const login = async (req, res) => {
       email: user.email,
       role: user.role,
       message: "Login successful"
+      token: genToken(user)
     })
 
   } catch (err) {
